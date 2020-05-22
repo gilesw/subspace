@@ -1,0 +1,3 @@
+# don't store private keys on the subspace server once they're generated and make sure our config in general is not world readable
+*/10 * * * * root chmod 640 /data/config.json; chmod -R 750 /data/wireguard; perl -pi -e 's/PrivateKey = .*/PrivateKey = YOU MUST MAKE A NEW PROFILE IF YOU LOST YOUR KEY/' /data/wireguard/client/*.conf
+

@@ -197,6 +197,12 @@ $ sudo docker rm subspace
 $ sudo docker create ... (see above)
 ```
 
+### Security
+
+Subspace generates a public private keypair for each user and stores them on the server in a file. Anyone with sudo access to the subspace server can therefore read other peoples keys.
+
+To mitigate this you can add the cron in etc/cron.d/subspace which will delete the private keys after they are generated. That does mean the user will have to regenerate a key if they lose their current one.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
